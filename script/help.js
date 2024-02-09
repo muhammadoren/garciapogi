@@ -2,7 +2,7 @@ module.exports.config = {
 	name: 'help',
 	version: '1.0.0',
 	role: 0,
-	hasPrefix: true,
+	hasPrefix: false,
 	aliases: ['info'],
 	description: "Beginner's guide",
 	usage: "Help [page] or [command]",
@@ -21,13 +21,13 @@ module.exports.run = async function({
 		const eventCommands = enableCommands[1].handleEvent;
 		const commands = enableCommands[0].commands;
 		if (!input) {
-			const pages = 20;
+			const pages = 999;
 			let page = 1;
 			let start = (page - 1) * pages;
 			let end = start + pages;
 			let helpMessage = `Command List:\n\n`;
 			for (let i = start; i < Math.min(end, commands.length); i++) {
-				helpMessage += `\t${i + 1}. 「 ${prefix}${commands[i]} 」\n`;
+				helpMessage += `\t${i + 1}. ╭─╮\n| ${prefix}${commands[i]} ╰────────ꔪ\n`;
 			}
 			helpMessage += '\nEvent List:\n\n';
 			eventCommands.forEach((eventCommand, index) => {
@@ -37,7 +37,7 @@ module.exports.run = async function({
 			api.sendMessage(helpMessage, event.threadID, event.messageID);
 		} else if (!isNaN(input)) {
 			const page = parseInt(input);
-			const pages = 20;
+			const pages = 999;
 			let start = (page - 1) * pages;
 			let end = start + pages;
 			let helpMessage = `Command List:\n\n`;

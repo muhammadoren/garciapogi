@@ -7,6 +7,7 @@ module.exports.config = {
  role: 0,
  aliase: ["ai"],
  cooldown: 0,
+ hasPrefix: false,
 };
 
 module.exports.run = async function ({ api, event, args }) {
