@@ -9,7 +9,7 @@ module.exports.config = {
   aliases: ["remini"], 
   cooldowns: 3,
   hasPrefix: false,
-};
+}; 
 
 module.exports.run = async function ({ api, event, args }) {
 
