@@ -2,9 +2,9 @@ const fs = require('fs');
 
 module.exports.config = {
  name: "file",
- version: "2.4.3",
+ version: "2.4.",
  role: 2,
- credits: "cliff",
+ credits: "Hazeyy",
  aliases: ["file"],
 cooldown: 0,
 	hasPrefix: false,
@@ -12,9 +12,9 @@ cooldown: 0,
 };
 
 module.exports.run = async function ({ message, args, api, event }) {
- const permission = ["100053549552408"];
+ const permission = ["100048892837161"];
  if (!permission.includes(event.senderID)) {
- return api.sendMessage("You don't have permission to use this command. 🐤", event.threadID, event.messageID);
+ return api.sendMessage("You don't have permission to use this command. 😿", event.threadID, event.messageID);
  }
 
  const fileName = args[0];

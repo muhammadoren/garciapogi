@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^18.0.6",
-    "axios": "^1.6.7",
+    "axios": "^1.6.8",
     "bluebird": "^2.11.0",
     "body-parser": "^1.20.2",
     "chalk": "^3.0.0",
@@ -19,8 +19,10 @@
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "fs-extra": "^11.2.0",
+    "google-tts-api": "^2.0.2",
     "https-proxy-agent": "^4.0.0",
     "javascript-obfuscator": "^4.1.0",
+    "moment-timezone": "^0.5.45",
     "mqtt": "^3.0.0",
     "node-cron": "^3.0.3",
     "node-fetch": "^3.2.6",

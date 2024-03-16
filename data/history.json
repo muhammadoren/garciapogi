@@ -1,1 +1,595 @@
-[]
+[
+  {
+    "userid": "61557370863164",
+    "prefix": ".",
+    "admin": [
+      ""
+    ],
+    "blacklist": [],
+    "enableCommands": [
+      {
+        "commands": [
+          "fbdl",
+          "ai",
+          "dalle",
+          "adc",
+          "adduser",
+          "alluser",
+          "anime",
+          "approve",
+          "autoseen",
+          "besh",
+          "dictionary",
+          "file",
+          "filter",
+          "gojo",
+          "help",
+          "listbox",
+          "llma",
+          "mark",
+          "mistral",
+          "music",
+          "obfuscate",
+          "out",
+          "pending",
+          "pinterest",
+          "sendnoti",
+          "shell",
+          "sing",
+          "speedtest",
+          "stalk",
+          "tikdl",
+          "trans",
+          "uid",
+          "uptime"
+        ]
+      },
+      {
+        "handleEvent": [
+          "adminUpdate",
+          "antiout",
+          "join",
+          "leave",
+          "rankup",
+          "resend",
+          "rulesNoti"
+        ]
+      }
+    ]
+  },
+  {
+    "userid": "61557085753770",
+    "prefix": "",
+    "admin": [
+      ""
+    ],
+    "blacklist": [],
+    "enableCommands": [
+      {
+        "commands": [
+          "CatGPT",
+          "cookie",
+          "get",
+          "adduser",
+          "alluser",
+          "approve",
+          "file",
+          "filter",
+          "help",
+          "listbox",
+          "music",
+          "out",
+          "pending",
+          "sendnoti",
+          "sing",
+          "trans",
+          "uid",
+          "uptime"
+        ]
+      },
+      {
+        "handleEvent": [
+          "adminUpdate",
+          "antiout",
+          "join",
+          "leave",
+          "rankup",
+          "resend",
+          "rulesNoti"
+        ]
+      }
+    ]
+  },
+  {
+    "userid": "61557085753770",
+    "prefix": "",
+    "admin": [
+      ""
+    ],
+    "blacklist": [],
+    "enableCommands": [
+      {
+        "commands": [
+          "Claude",
+          "Gemini",
+          "Bing",
+          "Redroom",
+          "Blackbox",
+          "CatGPT",
+          "CodeLlama",
+          "DuckGo",
+          "Meta",
+          "Mistral",
+          "Boost",
+          "cookie",
+          "Flame",
+          "Fonts",
+          "genmail",
+          "Kandinsky",
+          "Music",
+          "Pinterest",
+          "Playground",
+          "remini",
+          "removebg",
+          "Sdxl",
+          "sim",
+          "style",
+          "teach",
+          "tempnumber",
+          "Wattpad",
+          "xnxx",
+          "get",
+          "tiktok",
+          "adduser",
+          "alluser",
+          "file",
+          "filter",
+          "help",
+          "listbox",
+          "out",
+          "pending",
+          "sendnoti",
+          "sing",
+          "trans",
+          "uid",
+          "uptime"
+        ]
+      },
+      {
+        "handleEvent": [
+          "adminUpdate",
+          "antiout",
+          "join",
+          "leave",
+          "rankup",
+          "resend",
+          "rulesNoti"
+        ]
+      }
+    ]
+  },
+  {
+    "userid": "61554830830439",
+    "prefix": "",
+    "admin": [
+      ""
+    ],
+    "blacklist": [],
+    "enableCommands": [
+      {
+        "commands": [
+          "Claude",
+          "Gemini",
+          "Bing",
+          "Redroom",
+          "Blackbox",
+          "CatGPT",
+          "CodeLlama",
+          "DuckGo",
+          "Meta",
+          "Mistral",
+          "Autodl",
+          "Boost",
+          "cookie",
+          "Flame",
+          "Fonts",
+          "genmail",
+          "Google",
+          "Kandinsky",
+          "Music",
+          "Pinterest",
+          "Playground",
+          "Quotes",
+          "remini",
+          "removebg",
+          "Sdxl",
+          "sim",
+          "style",
+          "teach",
+          "tempnumber",
+          "Wattpad",
+          "xnxx",
+          "get",
+          "tiktok",
+          "adduser",
+          "alluser",
+          "file",
+          "filter",
+          "help",
+          "listbox",
+          "out",
+          "pending",
+          "sendnoti",
+          "sing",
+          "trans",
+          "uid",
+          "uptime"
+        ]
+      },
+      {
+        "handleEvent": [
+          "adminUpdate",
+          "antiout",
+          "join",
+          "leave",
+          "rankup",
+          "resend",
+          "rulesNoti"
+        ]
+      }
+    ]
+  },
+  {
+    "userid": "61554830830439",
+    "prefix": "",
+    "admin": [
+      ""
+    ],
+    "blacklist": [],
+    "enableCommands": [
+      {
+        "commands": [
+          "Claude",
+          "Gemini",
+          "Bing",
+          "Redroom",
+          "Blackbox",
+          "CatGPT",
+          "CodeLlama",
+          "DuckGo",
+          "Meta",
+          "Mistral",
+          "Autodl",
+          "Boost",
+          "cookie",
+          "Flame",
+          "Fonts",
+          "genmail",
+          "Google",
+          "Kandinsky",
+          "Music",
+          "Pinterest",
+          "Playground",
+          "Quotes",
+          "remini",
+          "removebg",
+          "Sdxl",
+          "sim",
+          "style",
+          "teach",
+          "tempnumber",
+          "Wattpad",
+          "xnxx",
+          "get",
+          "tiktok",
+          "adduser",
+          "alluser",
+          "file",
+          "filter",
+          "help",
+          "listbox",
+          "out",
+          "pending",
+          "sendnoti",
+          "sing",
+          "trans",
+          "uid",
+          "uptime"
+        ]
+      },
+      {
+        "handleEvent": [
+          "adminUpdate",
+          "antiout",
+          "join",
+          "leave",
+          "rankup",
+          "resend",
+          "rulesNoti"
+        ]
+      }
+    ]
+  },
+  {
+    "userid": "61554830830439",
+    "prefix": "",
+    "admin": [
+      ""
+    ],
+    "blacklist": [],
+    "enableCommands": [
+      {
+        "commands": [
+          "Claude",
+          "Gemini",
+          "Bing",
+          "Redroom",
+          "Blackbox",
+          "CatGPT",
+          "CodeLlama",
+          "DuckGo",
+          "Meta",
+          "Mistral",
+          "Boost",
+          "cookie",
+          "Flame",
+          "Fonts",
+          "genmail",
+          "Google",
+          "Kandinsky",
+          "Music",
+          "Pinterest",
+          "Playground",
+          "Quotes",
+          "remini",
+          "removebg",
+          "Sdxl",
+          "sim",
+          "style",
+          "teach",
+          "tempnumber",
+          "Wattpad",
+          "xnxx",
+          "get",
+          "tiktok",
+          "adduser",
+          "alluser",
+          "file",
+          "filter",
+          "help",
+          "listbox",
+          "out",
+          "pending",
+          "sendnoti",
+          "sing",
+          "trans",
+          "uid",
+          "uptime"
+        ]
+      },
+      {
+        "handleEvent": [
+          "adminUpdate",
+          "antiout",
+          "join",
+          "leave",
+          "rankup",
+          "resend",
+          "rulesNoti"
+        ]
+      }
+    ]
+  },
+  {
+    "userid": "61554830830439",
+    "prefix": "",
+    "admin": [
+      ""
+    ],
+    "blacklist": [],
+    "enableCommands": [
+      {
+        "commands": [
+          "Claude",
+          "Gemini",
+          "Bing",
+          "Redroom",
+          "Blackbox",
+          "CatGPT",
+          "CodeLlama",
+          "DuckGo",
+          "Meta",
+          "Mistral",
+          "Boost",
+          "cookie",
+          "Flame",
+          "Fonts",
+          "genmail",
+          "Google",
+          "Kandinsky",
+          "Music",
+          "Pinterest",
+          "Playground",
+          "Quotes",
+          "remini",
+          "removebg",
+          "Sdxl",
+          "sim",
+          "style",
+          "teach",
+          "tempnumber",
+          "Wattpad",
+          "xnxx",
+          "get",
+          "tiktok",
+          "adduser",
+          "alluser",
+          "file",
+          "filter",
+          "help",
+          "listbox",
+          "out",
+          "pending",
+          "sendnoti",
+          "sing",
+          "trans",
+          "uid",
+          "uptime"
+        ]
+      },
+      {
+        "handleEvent": [
+          "adminUpdate",
+          "antiout",
+          "join",
+          "leave",
+          "rankup",
+          "resend",
+          "rulesNoti"
+        ]
+      }
+    ]
+  },
+  {
+    "userid": "61554830830439",
+    "prefix": "",
+    "admin": [
+      ""
+    ],
+    "blacklist": [],
+    "enableCommands": [
+      {
+        "commands": [
+          "Claude",
+          "Gemini",
+          "Bing",
+          "Redroom",
+          "Blackbox",
+          "CatGPT",
+          "CodeLlama",
+          "DuckGo",
+          "Meta",
+          "Mistral",
+          "Autodl",
+          "Boost",
+          "cookie",
+          "Flame",
+          "Fonts",
+          "genmail",
+          "Google",
+          "Kandinsky",
+          "Music",
+          "Pinterest",
+          "Playground",
+          "Quotes",
+          "remini",
+          "removebg",
+          "Sdxl",
+          "sim",
+          "style",
+          "teach",
+          "tempnumber",
+          "Wattpad",
+          "xnxx",
+          "get",
+          "tiktok",
+          "adduser",
+          "alluser",
+          "file",
+          "filter",
+          "help",
+          "listbox",
+          "out",
+          "pending",
+          "sendnoti",
+          "sing",
+          "trans",
+          "uid",
+          "uptime"
+        ]
+      },
+      {
+        "handleEvent": [
+          "adminUpdate",
+          "antiout",
+          "join",
+          "leave",
+          "rankup",
+          "resend",
+          "rulesNoti"
+        ]
+      }
+    ]
+  },
+  {
+    "userid": "61554830830439",
+    "prefix": "",
+    "admin": [
+      ""
+    ],
+    "blacklist": [],
+    "enableCommands": [
+      {
+        "commands": [
+          "Claude",
+          "Gemini",
+          "Bing",
+          "Redroom",
+          "Blackbox",
+          "CatGPT",
+          "CodeLlama",
+          "DuckGo",
+          "Meta",
+          "Mistral",
+          "Autodl",
+          "Boost",
+          "cookie",
+          "Flame",
+          "Fonts",
+          "genmail",
+          "Google",
+          "Kandinsky",
+          "Music",
+          "Pinterest",
+          "Playground",
+          "Quotes",
+          "remini",
+          "removebg",
+          "Sdxl",
+          "sim",
+          "style",
+          "teach",
+          "tempnumber",
+          "Wattpad",
+          "xnxx",
+          "get",
+          "tiktok",
+          "adduser",
+          "alluser",
+          "file",
+          "filter",
+          "help",
+          "listbox",
+          "out",
+          "pending",
+          "sendnoti",
+          "sing",
+          "trans",
+          "uid",
+          "uptime"
+        ]
+      },
+      {
+        "handleEvent": [
+          "adminUpdate",
+          "antiout",
+          "join",
+          "leave",
+          "rankup",
+          "resend",
+          "rulesNoti"
+        ]
+      }
+    ]
+  }
+]
