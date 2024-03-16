@@ -1,6 +1,5 @@
 const axios = require("axios");
 const moment = require("moment-timezone");
-let FONT_ENABLED = true;
 
 module.exports.config = {
   name: "Blackbox",
@@ -15,29 +14,8 @@ module.exports.config = {
 let LastQuery = "";
 
 module.exports.run = async function ({ api, event, args }) {
-  const lowerCaseBody = event.body.toLowerCase();
 
-  if (lowerCaseBody.startsWith("box on")) {
-    FONT_ENABLED = true;
-    api.sendMessage({
-      body: `🤖 𝙱𝚕𝚊𝚌𝚔𝙱𝚘𝚡 𝙵𝚘𝚗𝚝\n\n» 🟢 𝙴𝚗𝚊𝚋𝚕𝚎𝚍 «`,
-      attachment: null,
-      mentions: [],
-    }, event.threadID);
-    return;
-  }
-
-  if (lowerCaseBody.startsWith("box off")) {
-    FONT_ENABLED = false;
-    api.sendMessage({
-      body: `🤖 𝙱𝚕𝚊𝚌𝚔𝙱𝚘𝚡 𝙵𝚘𝚗𝚝\n\n» 🔴 𝙳𝚒𝚜𝚊𝚋𝚕𝚎𝚍 «`,
-      attachment: null,
-      mentions: [],
-    }, event.threadID);
-    return;
-  }
-
-  if (!args[0]) {
+  if (args.length === 0) {
     api.sendMessage("🤖 𝙷𝚎𝚕𝚕𝚘 𝙸 𝚊𝚖 𝙱𝚕𝚊𝚌𝚔𝙱𝚘𝚡 𝙰𝙸 𝚝𝚛𝚊𝚒𝚗𝚎𝚍 𝚋𝚢 𝙶𝚘𝚘𝚐𝚕𝚎.\n\n𝙷𝚘𝚠 𝚖𝚊𝚢 𝚒 𝚊𝚜𝚜𝚒𝚜𝚝 𝚢𝚘𝚞 𝚝𝚘𝚍𝚊𝚢?", event.threadID, event.messageID, event.messageID);
     return;
   }
