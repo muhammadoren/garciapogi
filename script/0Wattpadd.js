@@ -78,7 +78,7 @@ function formatFont(text) {
   return formattedText;
 }
 
-module.exports.run = async ({ api, event, args }) => {
+module.exports.run = async function ({ api, event, args }) {
     const query = args.join(" ");
     axios.get(`https://www.wattpad.com/search/${query}`)
         .then(async ({ data }) => {
