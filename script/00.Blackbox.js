@@ -11,8 +11,6 @@ module.exports.config = {
   hasPrefix: false,
 };
 
-let LastQuery = "";
-
 module.exports.run = async function ({ api, event, args }) {
 
   if (args.length === 0) {
@@ -20,18 +18,10 @@ module.exports.run = async function ({ api, event, args }) {
     return;
   }
 
-  const query = args.join(" ");
-
-  if (query === lastQuery) {
-    api.sendMessage("🕛 | 𝚄𝚙𝚍𝚊𝚝𝚎𝚍 𝙰𝚗𝚜𝚠𝚎𝚛 𝚝𝚘 𝚙𝚛𝚎𝚟𝚒𝚘𝚞𝚜 𝚚𝚞𝚎𝚜𝚝𝚒𝚘𝚗, 𝙿𝚕𝚎𝚊𝚜𝚎 𝚠𝚊𝚒𝚝...", event.threadID, event.messageID);
-    return;
-  } else {
-    lastQuery = query;
-  }
-
   api.sendMessage("🗨️ | 𝙱𝚕𝚊𝚌𝚔𝙱𝚘𝚡 𝙰𝙸 𝚒𝚜 𝚝𝚑𝚒𝚗𝚔𝚒𝚗𝚐....", event.threadID, event.messageID);
 
   try {
+    const query = args.join(" ");
     const response = await axios.get(`https://hazeyy-merge-apis-b924b22feb7b.herokuapp.com/blackbox/ask?q=${encodeURIComponent(query)}`);
 
     if (response.status === 200 && response.data && response.data.message) {
