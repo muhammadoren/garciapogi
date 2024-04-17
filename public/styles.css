@@ -1,78 +1,77 @@
 body {
-    padding: 40px;
-    font-family: 'Poppins', sans-serif;
-    display: center;
-    justify-content: center;
-    align-items: flex;
-    height: 100vh;
-    background-image: url('https://i.imgur.com/FImuOWo.gif');
-    background-size: cover;
+    padding: 20px;
+    background: url(image/bg.svg);
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Add this line to make the background fixed */
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
-    position: relative;
+    background-color: rgba(0, 0, 0, 0.79);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.1);
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background: linear-gradient(45deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8a2be2, #ff1493);
-    background-size: 1400% 1400%;
-    animation: rainbowBackground 15s ease infinite;
-}
-
-@keyframes rainbowBackground {
-    0% {
-        background-position: 0 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0 50%;
-    }
 }
 
 h1 {
-    color: #0d686d; /* Dark aqua for headings */
+    color: #00ff00;
 }
 
 label {
-    color: #266b8e; /* Aqua for labels */
+    color: #00ff00;
 }
 
 .centered-textarea {
     display: block;
     margin: 0 auto;
     width: 100%;
-    min-height: 150px;
+    min-height: 500px;
     padding: 10px;
+    background: url(image/hero.webp);
+    background-size: cover;
+    background-position: center;
     box-sizing: border-box;
-    border: 1px solid #68c7c0; /* Aqua border color */
+    border: 1px solid #00ff00;
     border-radius: 5px;
     resize: none;
 }
 
+[class^="centered-textarea"]::before {
+    color: neongreen;
+    content: attr(data-prefix);
+}
+
 .btn-primary {
-    background-color: #1eaab2; /* Aqua primary button background */
-    border: 1px solid #1eaab2; /* Aqua primary button border */
+    background-color: #000000;
+    border: 1px solid #00ff00;
 }
 
 .btn-primary:hover {
-    background-color: #0d8a93; /* Darker aqua on hover */
-    border: 1px solid #0d8a93; /* Darker aqua border on hover */
+    background-color: #000000;
+    border: 1px solid #00ff00;
 }
 
 .success-message {
-    color: #0a9c44; /* Success message color */
+    color: green;
     margin-top: 10px;
 }
 
 .footer {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.79);
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #00ff00;
+    margin-top: 50px;
+    border-top: 1px solid #00ff00;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 .footer p {
@@ -105,17 +104,17 @@ label {
     margin-top: 10px;
     padding: 14px;
     align-items: center;
-    border: 1px solid #68c7c0; /* Aqua form check border */
+    border: 1px solid #00ff00;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    border-color: #68c7c0; /* Aqua border color */
-    background-color: #d4f4ef; /* Aqua background color */
+    border-color: #00ff00;
+    background-color: #000000;
 }
 
 .form-check:hover {
-    background-color: #a3e5e0; /* Lighter aqua on hover */
-    border-color: #266b8e; /* Dark aqua border on hover */
+    background-color: #00ff00;
+    border-color: #000000;
 }
 
 .form-check-input {
@@ -131,12 +130,12 @@ label {
 #inputOfAdmin {
     padding: 13px;
     width: 200px;
-    border: 1px solid #68c7c0; /* Aqua border color */
+    border: 1px solid #00ff00;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    border-color: #68c7c0; /* Aqua border color */
-    background-color: #d4f4ef; /* Aqua background color */
+    border-color: #00ff00;
+    background-color: #000000;
 }
 
 #listOfCommands,
