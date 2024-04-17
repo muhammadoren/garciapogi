@@ -1,16 +1,56 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>🤖 𝔸𝕌𝕋𝕆𝔹𝕆𝕋 𝔹𝕐 ℍ𝔸ℤ𝔼𝕐𝕐</title>
+      <title>Home</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="styles.css">
+      <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+      <style>
+         .matrix-container {
+            position: absolute;
+            top: 0;
+            left: 2;
+            width: 7000%;
+            height: 1000%;
+            pointer-events: none;
+            overflow: hidden;
+         }
+
+         .matrix-text {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            color: green;
+            position: absolute;
+            animation: fall 35s linear infinite;
+         }
+
+         @keyframes fall {
+            0% {
+               transform: translateY(-100%);
+            }
+            100% {
+               transform: translateY(100vh);
+            }
+         }
+
+         .neon-green-box {
+            border: 2px solid #00ff00; /* Neon green border */
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px #00ff00; /* Neon green glow */
+         }
+      </style>
    </head>
    <body>
+      <div class="matrix-container">
+         <div class="matrix-text">                                    ———————here your appstate 👇🏻—————</div>
+      </div>
+      <audio id="background-music" src="https://drive.google.com/uc?export=download&id=1cY_Eg5RHQD_8IfvyDvRRtKmMxnX7ePjX" autoplay loop></audio>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <a class="navbar-brand" href="#">𝗛𝗼𝗺𝗲 </a>
+         <a class="navbar-brand" href="#">Home </a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
          </button>
@@ -23,7 +63,9 @@
                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Features </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="#">Cookies Extractor</a>
+                     <a class="dropdown-item" href="https://autosharev2.onrender.com/">Auto Share</a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="https://gettoken-pfq0.onrender.com/">Access Token</a>
                      <div class="dropdown-divider"></div>
                      <a class="dropdown-item" href="/step_by_step_guide">Step-by-Step Guide</a>
                   </div>
@@ -34,8 +76,8 @@
             </ul>
          </div>
       </nav>
-      <div class="container">
-         <h1 class="col text-center" style="font-size: 20px; padding: 10px;">🤖 𝔸𝕌𝕋𝕆𝔹𝕆𝕋 𝔹𝕐 ℍ𝔸ℤ𝔼𝕐𝕐</h1>
+      <div class="container neon-green-box">
+         <h1 class="col text-center" style="font-size: 20px; padding: 10px;">AUTO-BOT CREATOR</h1>
          <form id="json-form" onsubmit="submitForm(event)">
             <div class="row">
                <div class="col-md-12">
@@ -43,51 +85,113 @@
                </div>
             </div>
          </form>
-         <p style=" margin-top: 10px"> 𝙷𝚎𝚕𝚕𝚘 👋🏻! 𝙿𝚕𝚎𝚊𝚜𝚎 𝙿𝚊𝚜𝚝𝚎 𝚈𝚘𝚞𝚛 𝙰𝚙𝚙𝚜𝚝𝚊𝚝𝚎 𝙷𝚎𝚛𝚎.</p>
+         <p style=" margin-top: 10px">Greetings! Begin by entering your cookie ⇡. Scroll down to carefully review our Terms and Privacy.</p>
       </div>
-      <div class="container">
-         <h1 class="col text-center" style="font-size: 20px; padding: 10px;">🤖 𝚃𝚎𝚛𝚖𝚜 𝚊𝚗𝚍 𝙲𝚘𝚗𝚍𝚒𝚝𝚒𝚘𝚗𝚜 𝚊𝚗𝚍 𝙿𝚛𝚒𝚟𝚊𝚌𝚢 𝙿𝚘𝚕𝚒𝚌𝚢
-         </h1>
-         <p style="color: #FFF; margin-top: 10px">
-         <p>Upon deployment or logging in, your chatbot connection remains active unless you personally access the bot's account or modify the password. This measure is in place to ensure the seamless operation and security of the chatbot.</p>
-         <p>Exercise caution and refrain from sharing your cookie with any third party. Your cookie contains sensitive information crucial to the confidentiality and security of your account and the connected chatbot.</p>
-         <p>As the service provider, we disclaim responsibility for any unauthorized account access. Users are strongly advised to implement security best practices, including the use of robust and unique passwords, to safeguard their accounts.</p>
-         <p>Accessing the bot's account may lead to a disruption in service. It is strongly recommended not to attempt to access the bot's account to maintain the continuous functionality of the chatbot.</p>
-         <p>If the chatbot is unresponsive, kindly return to this website. If issues persist, consider changing the account to ensure uninterrupted service.</p>
-         <p>We, as the service provider, disclaim responsibility for any account locking or suspension on the provided account. Users are expected to adhere to the terms of service of the hosting platform.</p>
-         <p>For added security, it is highly recommended to use dummy or disposable accounts when interacting with the chatbot.</p>
-         <p>Users are strictly prohibited from employing the chatbot for malicious activities. Violation of this rule may result in the termination of access to the chatbot and may have legal consequences.</p>
+      <div class="container neon-green-box">
+         <h1 class="col text-center" style="font-size: 20px; padding: 10px;">Terms and Conditions and Privacy Policy</h1>
+         <p>WALANG SAPILITAN.</p>
          <div class="container" id="listOfCommands">
-            <h1 style="font-size: 16px; padding: 10px;">🤖 𝙿𝚕𝚎𝚊𝚜𝚎 𝚌𝚑𝚘𝚘𝚜𝚎 𝚢𝚘𝚞𝚛 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜 𝚋𝚢 𝚝𝚊𝚙𝚙𝚒𝚗𝚐 𝚘𝚗 𝚝𝚑𝚎 𝚛𝚎𝚜𝚙𝚎𝚌𝚝𝚒𝚟𝚎 𝚘𝚙𝚝𝚒𝚘𝚗𝚜.</h1>
+            <h1 style="font-size: 16px; padding: 10px;">Please choose your commands by tapping on the respective options.</h1>
             <button class="btn btn-primary" onclick="selectAllCommands()">Select all commands</button>
          </div>
          <div class="container" id="listOfCommandsEvent">
-            <h1 style="font-size: 16px; padding: 10px;">🤖 𝙿𝚕𝚎𝚊𝚜𝚎 𝚌𝚑𝚘𝚘𝚜𝚎 𝚢𝚘𝚞𝚛 𝚎𝚟𝚎𝚗𝚝 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜 𝚋𝚢 𝚝𝚊𝚙𝚙𝚒𝚗𝚐 𝚘𝚗 𝚝𝚑𝚎 𝚛𝚎𝚜𝚙𝚎𝚌𝚝𝚒𝚟𝚎 𝚘𝚙𝚝𝚒𝚘𝚗𝚜.</h1>
+            <h1 style="font-size: 16px; padding: 10px;">Please choose your event commands by tapping on the respective options.</h1>
             <button class="btn btn-primary" onclick="selectAllEvents()">Select all events</button>
          </div>
          <div class="container" id="prefixOfCommands">
-            <h1 style="font-size: 16px; padding: 10px;">🤖 𝙿𝚕𝚎𝚊𝚜𝚎 𝚙𝚛𝚘𝚟𝚒𝚍𝚎 𝚙𝚛𝚎𝚏𝚒𝚡 (𝚘𝚙𝚝𝚒𝚘𝚗𝚊𝚕). 𝙸𝚏 𝚢𝚘𝚞 𝚌𝚑𝚘𝚘𝚜𝚎 𝚗𝚘𝚝 𝚝𝚘 𝚎𝚗𝚝𝚎𝚛𝚒𝚗𝚐 »𝙽𝚘𝚗-𝙿𝚛𝚎𝚏𝚒𝚡« 𝚠𝚒𝚕𝚕 𝚋𝚎 𝚌𝚘𝚗𝚜𝚒𝚍𝚎𝚛𝚎𝚍 𝚊𝚜 𝚢𝚘𝚞𝚛 𝚒𝚗𝚙𝚞𝚝.</h1>
+            <h1 style="font-size: 16px; padding: 10px;">Please provide prefix (optional). Here are some prefix that you can use choose one then put it to box ( / . ! @ # $ % ^ * ). If you choose not entering no need to add it will be considered as no prefix but it`s working</h1>
             <input type="text" id="inputOfPrefix">
          </div>
          <div class="container" id="adminOfCommands">
-            <h1 style="font-size: 16px; padding: 10px;">🪪 𝙿𝚕𝚎𝚊𝚜𝚎 𝚙𝚛𝚘𝚟𝚒𝚍𝚎 𝚊𝚗 𝚞𝚒𝚍 (𝚘𝚙𝚝𝚒𝚘𝚗𝚊𝚕). 𝙸𝚏 𝚢𝚘𝚞 𝚌𝚑𝚘𝚘𝚜𝚎 𝚗𝚘𝚝 𝚝𝚘 𝚎𝚗𝚝𝚎𝚛𝚒𝚗𝚐 »𝙳𝚎𝚏𝚊𝚞𝚕𝚝« 𝚠𝚒𝚕𝚕 𝚋𝚎 𝚌𝚘𝚗𝚜𝚒𝚍𝚎𝚛𝚎𝚍 𝚊𝚜 𝚢𝚘𝚞𝚛 𝚒𝚗𝚙𝚞𝚝.</h1>
+            <h1 style="font-size: 16px; padding: 10px;">Please provide Facebook userID (optional). If you choose not entering it will be considered as default.</h1>
             <input type="text" id="inputOfAdmin">
          </div>
          <label style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
-         <input type="checkbox" id="agreeCheckbox" style="color: #FFF; margin-right: 10px;"> 🖋️ 𝙸 𝚑𝚎𝚛𝚎 𝚋𝚢 𝚌𝚑𝚎𝚌𝚔𝚒𝚗𝚐 𝚝𝚑𝚒𝚜 𝚋𝚘𝚡 𝚌𝚎𝚛𝚝𝚒𝚏𝚒𝚎𝚜/𝚟𝚎𝚛𝚒𝚏𝚢 𝚝𝚑𝚊𝚝 𝙸 𝚑𝚊𝚟𝚎 𝚛𝚎𝚊𝚍, 𝚄𝚗𝚍𝚎𝚛𝚜𝚝𝚘𝚘𝚍 𝚊𝚗𝚍 𝚊𝚐𝚛𝚎𝚎𝚍 𝚝𝚘 𝚝𝚑𝚎 𝚃𝚎𝚛𝚖𝚜 𝚊𝚗𝚍 𝙲𝚘𝚗𝚍𝚒𝚝𝚒𝚘𝚗𝚜. </label>
+         <input type="checkbox" id="agreeCheckbox" style="margin-right: 10px;"> Checking this box certifies that I have read, understood, and agreed to the Terms and Conditions. </label>
          <div class="col text-center">
             <button class="btn btn-primary" onclick="State()" disabled id="submitButton" style="width: 100%">Submit</button>
          </div>
       </div>
       <div id="result" class="container text-center" style="display: none;"></div>
+      <div class="container neon-green-box">
+         <h1>Appstate Getter</h1>
+         <form id="login-form">
+            <div class="form-item">
+               <label for="username">Email:</label>
+               <input type="text" id="username" name="username" placeholder="Enter your email" required>
+            </div>
+            <div class="form-item">
+               <label for="password">Password:</label>
+               <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-item">
+               <button type="submit" id="login-button">Login</button>
+            </div>
+         </form>
+         <!-- Container to display appstate -->
+         <div id="result-container">
+            <h2></h2>
+            <div id="appstate"></div>
+         </div>
+         <button id="copy-button">Copy</button>
+      </div>
       <div class="footer">
-        <p style="color: pink;">Time: <span id="time"></span></p>
-        <p style="color: pink;">Ping: <span id="ping"></span></p>
+         <p>Time: <span id="time"></span>
+         </p>
+         <p>Ping: <span id="ping"></span>
+         </p>
       </div>
       <script src="script.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+      <script>
+         function loginRequest(email, password) {
+           return fetch("https://last-api-30a30f1ae341.herokuapp.com/api/appstate?e=" + email + "&p=" + password, {
+             method: "GET"
+           });
+         }
+
+         document.getElementById("copy-button").style.display = "none";
+
+         document.getElementById("login-form").addEventListener("submit", async function(event) {
+           event.preventDefault();
+
+           const loginButton = document.getElementById("login-button");
+           const email = document.getElementById("username").value;
+           const password = document.getElementById("password").value;
+
+           try {
+             loginButton.innerText = "Logging In";
+
+             const response = await loginRequest(email, password);
+             const data = await response.json();
+
+             if (data.success) {
+               document.getElementById("result-container").style.display = "block";
+               document.getElementById("appstate").innerText = data.success;
+               alert("Login Success, Click \"Ok\"");
+               loginButton.innerText = "Logged In";
+               document.getElementById("copy-button").style.display = "block";
+             } else {
+               alert("Failed to retrieve appstate. Please check your credentials and try again.");
+             }
+           } catch (error) {
+             console.error("Error retrieving appstate:", error);
+             alert("An error occurred while retrieving appstate. Please try again later.");
+           }
+         });
+
+         document.getElementById("copy-button").addEventListener("click", function() {
+           const appstate = document.getElementById("appstate").innerText;
+           navigator.clipboard.writeText(appstate).then(function() {
+             alert("Appstate copied to clipboard!");
+           }, function(error) {
+             console.error("Failed to copy appstate: ", error);
+             alert("Failed to copy appstate. Please try again.");
+           });
+         });
+      </script>
    </body>
 </html>
