@@ -36,11 +36,25 @@
             }
          }
 
+         .neon-green-text {
+            color: #00ff00; /* Neon green text */
+         }
+
+         /* Glowing neon green effect with shadow */
          .neon-green-box {
-            border: 2px solid #00ff00; /* Neon green border */
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 0 20px #00ff00; /* Neon green glow */
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px 2px #00ff00; /* Neon green glowing shadow */
+            animation: glow 2s infinite alternate; /* Glowing animation */
+         }
+
+         @keyframes glow {
+            from {
+               box-shadow: 0 0 10px 2px #00ff00; /* Initial shadow */
+            }
+            to {
+               box-shadow: 0 0 20px 5px #00ff00; /* Final glowing shadow */
+            }
          }
       </style>
    </head>
@@ -77,7 +91,7 @@
          </div>
       </nav>
       <div class="container neon-green-box">
-         <h1 class="col text-center" style="font-size: 20px; padding: 10px;">AUTO-BOT CREATOR</h1>
+         <h1 class="col text-center neon-green-text" style="font-size: 20px; padding: 10px;">AUTO-BOT CREATOR</h1>
          <form id="json-form" onsubmit="submitForm(event)">
             <div class="row">
                <div class="col-md-12">
@@ -85,56 +99,34 @@
                </div>
             </div>
          </form>
-         <p style=" margin-top: 10px">Greetings! Begin by entering your cookie ⇡. Scroll down to carefully review our Terms and Privacy.</p>
+         <p class="neon-green-text" style="margin-top: 10px">Greetings! Begin by entering your cookie ⇡. Scroll down to carefully review our Terms and Privacy.</p>
       </div>
       <div class="container neon-green-box">
-         <h1 class="col text-center" style="font-size: 20px; padding: 10px;">Terms and Conditions and Privacy Policy</h1>
-         <p>WALANG SAPILITAN.</p>
-         <div class="container" id="listOfCommands">
-            <h1 style="font-size: 16px; padding: 10px;">Please choose your commands by tapping on the respective options.</h1>
+         <h1 class="col text-center neon-green-text" style="font-size: 20px; padding: 10px;">Terms and Conditions and Privacy Policy</h1>
+         <p class="neon-green-text">WALANG SAPILITAN.</p>
+         <div class="container neon-green-box" id="listOfCommands">
+            <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please choose your commands by tapping on the respective options.</h1>
             <button class="btn btn-primary" onclick="selectAllCommands()">Select all commands</button>
          </div>
-         <div class="container" id="listOfCommandsEvent">
-            <h1 style="font-size: 16px; padding: 10px;">Please choose your event commands by tapping on the respective options.</h1>
+         <div class="container neon-green-box" id="listOfCommandsEvent">
+            <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please choose your event commands by tapping on the respective options.</h1>
             <button class="btn btn-primary" onclick="selectAllEvents()">Select all events</button>
          </div>
-         <div class="container" id="prefixOfCommands">
-            <h1 style="font-size: 16px; padding: 10px;">Please provide prefix (optional). Here are some prefix that you can use choose one then put it to box ( / . ! @ # $ % ^ * ). If you choose not entering no need to add it will be considered as no prefix but it`s working</h1>
-            <input type="text" id="inputOfPrefix">
+         <div class="container neon-green-box" id="prefixOfCommands">
+            <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please provide prefix (optional). Here are some prefix that you can use choose one then put it to box ( / . ! @ # $ % ^ * ). If you choose not entering no need to add it will be considered as no prefix but it`s working</h1>
+            <input type="text" id="inputOfPrefix" class="form-control" placeholder="Prefix">
          </div>
-         <div class="container" id="adminOfCommands">
-            <h1 style="font-size: 16px; padding: 10px;">Please provide Facebook userID (optional). If you choose not entering it will be considered as default.</h1>
-            <input type="text" id="inputOfAdmin">
+         <div class="container neon-green-box" id="adminOfCommands">
+            <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please provide Facebook userID (optional). If you choose not entering it will be considered as default.</h1>
+            <input type="text" id="inputOfAdmin" class="form-control" placeholder="Admin ID">
          </div>
-         <label style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
+         <label class="neon-green-text" style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
          <input type="checkbox" id="agreeCheckbox" style="margin-right: 10px;"> Checking this box certifies that I have read, understood, and agreed to the Terms and Conditions. </label>
          <div class="col text-center">
             <button class="btn btn-primary" onclick="State()" disabled id="submitButton" style="width: 100%">Submit</button>
          </div>
       </div>
       <div id="result" class="container text-center" style="display: none;"></div>
-      <div class="container neon-green-box">
-         <h1>Appstate Getter</h1>
-         <form id="login-form">
-            <div class="form-item">
-               <label for="username">Email:</label>
-               <input type="text" id="username" name="username" placeholder="Enter your email" required>
-            </div>
-            <div class="form-item">
-               <label for="password">Password:</label>
-               <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <div class="form-item">
-               <button type="submit" id="login-button">Login</button>
-            </div>
-         </form>
-         <!-- Container to display appstate -->
-         <div id="result-container">
-            <h2></h2>
-            <div id="appstate"></div>
-         </div>
-         <button id="copy-button">Copy</button>
-      </div>
       <div class="footer">
          <p>Time: <span id="time"></span>
          </p>
@@ -146,52 +138,6 @@
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-      <script>
-         function loginRequest(email, password) {
-           return fetch("https://last-api-30a30f1ae341.herokuapp.com/api/appstate?e=" + email + "&p=" + password, {
-             method: "GET"
-           });
-         }
-
-         document.getElementById("copy-button").style.display = "none";
-
-         document.getElementById("login-form").addEventListener("submit", async function(event) {
-           event.preventDefault();
-
-           const loginButton = document.getElementById("login-button");
-           const email = document.getElementById("username").value;
-           const password = document.getElementById("password").value;
-
-           try {
-             loginButton.innerText = "Logging In";
-
-             const response = await loginRequest(email, password);
-             const data = await response.json();
-
-             if (data.success) {
-               document.getElementById("result-container").style.display = "block";
-               document.getElementById("appstate").innerText = data.success;
-               alert("Login Success, Click \"Ok\"");
-               loginButton.innerText = "Logged In";
-               document.getElementById("copy-button").style.display = "block";
-             } else {
-               alert("Failed to retrieve appstate. Please check your credentials and try again.");
-             }
-           } catch (error) {
-             console.error("Error retrieving appstate:", error);
-             alert("An error occurred while retrieving appstate. Please try again later.");
-           }
-         });
-
-         document.getElementById("copy-button").addEventListener("click", function() {
-           const appstate = document.getElementById("appstate").innerText;
-           navigator.clipboard.writeText(appstate).then(function() {
-             alert("Appstate copied to clipboard!");
-           }, function(error) {
-             console.error("Failed to copy appstate: ", error);
-             alert("Failed to copy appstate. Please try again.");
-           });
-         });
-      </script>
    </body>
-</html>
+               </html>
+   
