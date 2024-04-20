@@ -39,6 +39,82 @@
                transform: translateY(100vh);
             }
          }
+
+         /* Glowing neon green effect with shadow for active user boxes */
+         .user-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            border: 1px solid transparent; /* Remove existing border */
+            border-radius: 10px;
+            padding: 5px;
+            width: 100%;
+            text-align: center;
+            overflow: auto;
+            animation: glow 3s infinite alternate;
+            box-shadow: 0 0 10px 2px #00ff00; /* Neon green glowing shadow */
+            background-color: black; /* Set background color to black */
+            color: #00ff00; /* Set text color to neon green */
+         }
+
+         @keyframes glow {
+            from {
+               border-color: #e5e5e5;
+            }
+            to {
+               border-color: #fff;
+            }
+         }
+
+         .user-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-right: 10px;
+         }
+
+         .user-info {
+            flex-grow: 1;
+         }
+
+         .user-info h4 {
+            margin-left: 3px;
+            margin-bottom: 3px;
+            font-size: 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: start;
+         }
+
+         .user-info p {
+            margin: 0;
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: start;
+         }
+
+         p {
+            padding: 3px;
+         }
+
+         p.uptime-user {
+         }
+
+         /* Neon green glowing effect for "Current Online" container */
+         .neon-green-box {
+            background-color: black; /* Set background color to black */
+            border-radius: 10px; /* Add border radius */
+            padding: 20px; /* Add padding */
+            box-shadow: 0 0 10px 2px #00ff00; /* Neon green glowing shadow */
+            margin-bottom: 20px; /* Add margin to separate from other content */
+         }
+
+         .neon-green-text {
+            color: #00ff00; /* Set text color to neon green */
+            text-shadow: 0 0 10px #00ff00; /* Add neon green glowing effect */
+         }
       </style>
    </head>
    <body>
@@ -46,88 +122,36 @@
          <div class="matrix-text">01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001</div>
       </div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <a class="navbar-brand" href="#" style="color: #000000;">Active</a>
+         <a class="navbar-brand neon-green-text" href="#" style="color: #00ff00;">Active</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
          </button>
          <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin-right: 80px;">
             <ul class="navbar-nav">
                <li class="nav-item active">
-                  <a class="nav-link" href="#" style="color: #000000;">Active<span class="sr-only">(current)</span>
+                  <a class="nav-link" href="#" style="color: #00ff00;">Active<span class="sr-only">(current)</span>
                   </a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="/" style="color: #000000;">Home</a>
+                  <a class="nav-link" href="/" style="color: #00ff00;">Home</a>
                </li>
                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #000000;"> Features </a>
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #00ff00;"> Features </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="#" style="color: #000000;">Cookies Extractor</a>
+                     <a class="dropdown-item" href="#" style="color: #00ff00;">Cookies Extractor</a>
                      <div class="dropdown-divider"></div>
-                     <a class="dropdown-item" href="/step_by_step_guide" style="color: #000000;">Step-by-Step Guide</a>
+                     <a class="dropdown-item" href="/step_by_step_guide" style="color: #00ff00;">Step-by-Step Guide</a>
                   </div>
                </li>
             </ul>
          </div>
       </nav>
-      <div class="container" style="background-color: #fff; padding: 20px; border-radius: 10px;">
+      <div class="container neon-green-box">
          <div class="row">
-            <h1 class="col text-start" style="margin-left: 12px; font-size: 20px; color: #000000;">Current Online:</h1>
+            <h1 class="col text-start neon-green-text" style="margin-left: 12px; font-size: 20px;">Current Online:</h1>
          </div>
          <div class="row" id="user_online"></div>
       </div>
-      <style>
-         .user-card {
-         display: flex;
-         align-items: center;
-         margin-bottom: 10px;
-         border: 1px solid #00ff00;
-         border-radius: 10px;
-         padding: 5px;
-         width: 100%;
-         text-align: center;
-         overflow: auto;
-         animation: glow 3s infinite alternate; 
-         }
-         @keyframes glow {
-         from {
-         border-color: #e5e5e5; 
-         }
-         to {
-         border-color: #fff; 
-         }
-         }
-         .user-card img {
-         max-width: 100%;
-         border-radius: 10px;
-         margin-right: 10px;
-         }
-         .user-info {
-         flex-grow: 1;
-         }
-         .user-info h4 {
-         margin-left: 3px;
-         margin-bottom: 3px;
-         font-size: 16px;
-         white-space: nowrap;
-         overflow: hidden;
-         text-overflow: ellipsis;
-         text-align: start;
-         }
-         .user-info p {
-         margin: 0;
-         font-size: 12px;
-         white-space: nowrap;
-         overflow: hidden;
-         text-overflow: ellipsis;
-         text-align: start;
-         }
-         p {
-         padding: 3px;
-         }
-         p.uptime-user {
-         }
-      </style>
       <script>
          async function listOfAi() {
              const userOnline = document.getElementById("user_online");
@@ -202,7 +226,6 @@
             return timeFormat.trim();
         }
 
-
          listOfAi();
 
       </script>
@@ -211,4 +234,5 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
    </body>
-</html>
+   </html>
+   
