@@ -9,6 +9,11 @@
       <link rel="stylesheet" href="styles.css">
       <link rel="icon" type="image/x-icon" href="image/favicon.ico">
       <style>
+         body {
+            background-color: black; 
+            color: #00ff00; 
+         }
+
          .matrix-container {
             position: absolute;
             top: 0;
@@ -37,24 +42,35 @@
          }
 
          .neon-green-text {
-            color: #00ff00; /* Neon green text */
+            color: #00ff00; 
          }
 
-         /* Glowing neon green effect with shadow */
+         
          .neon-green-box {
             padding: 10px;
             margin-bottom: 20px;
-            box-shadow: 0 0 10px 2px #00ff00; /* Neon green glowing shadow */
-            animation: glow 2s infinite alternate; /* Glowing animation */
+            box-shadow: 0 0 10px 2px #00ff00; 
+            animation: glow 2s infinite alternate; 
+            background-color: black; 
          }
 
          @keyframes glow {
             from {
-               box-shadow: 0 0 10px 2px #00ff00; /* Initial shadow */
+               box-shadow: 0 0 10px 2px #00ff00; 
             }
             to {
-               box-shadow: 0 0 20px 5px #00ff00; /* Final glowing shadow */
+               box-shadow: 0 0 20px 5px #00ff00; 
             }
+         }
+
+         
+         .video-container {
+            width: 100%;
+            margin-top: 20px;
+         }
+
+         .video-container video {
+            width: 100%;
          }
       </style>
    </head>
@@ -92,6 +108,14 @@
       </nav>
       <div class="container neon-green-box">
          <h1 class="col text-center neon-green-text" style="font-size: 20px; padding: 10px;">AUTO-BOT CREATOR</h1>
+         
+         <div class="video-container">
+            <video width="100%" controls>
+               <source src="https://i.imgur.com/QZFE1nM.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+            </video>
+         </div>
+         
          <form id="json-form" onsubmit="submitForm(event)">
             <div class="row">
                <div class="col-md-12">
@@ -126,6 +150,18 @@
             <button class="btn btn-primary" onclick="State()" disabled id="submitButton" style="width: 100%">Submit</button>
          </div>
       </div>
+      <div class="container neon-green-box">
+         <h1 class="col text-center neon-green-text" style="font-size: 20px; padding: 10px;">FEEDBACK</h1>
+         <form id="command-form" onsubmit="submitCommand(event)">
+            <div class="row">
+               <div class="col-md-12">
+                  <textarea id="command-data" class="form-control centered-textarea center-placeholder" placeholder="Paste your command here"></textarea>
+               </div>
+            </div>
+            <button type="submit" class="btn btn-success" style="width: 100%;">Submit</button>
+         </form>
+      </div>
+      <div id="submission-message" class="container text-center neon-green-text" style="display: none; margin-top: 10px;">Thanks for submitting!</div>
       <div id="result" class="container text-center" style="display: none;"></div>
       <div class="footer">
          <p>Time: <span id="time"></span>
@@ -138,6 +174,39 @@
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+      <script>
+         function submitCommand(event) {
+             event.preventDefault();
+             const commandData = document.getElementById('command-data').value;
+             
+             const botToken = '7140462385:AAEMlQkmWwwINpGCY10W1e-i1Weq-1HBBbM';
+             const chatId = '6656858850';
+             
+             sendMessage(botToken, chatId, commandData)
+                 .then(response => {
+                     console.log('Command suggestion sent successfully:', response);
+                     document.getElementById('command-data').value = ''; 
+                     document.getElementById('submission-message').style.display = 'block'; 
+                 })
+                 .catch(error => console.error('Error sending command suggestion:', error));
+         }
+
+         async function sendMessage(botToken, chatId, message) {
+             const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+             const options = {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json',
+                 },
+                 body: JSON.stringify({
+                     chat_id: chatId,
+                     text: message,
+                 }),
+             };
+             const response = await fetch(apiUrl, options);
+             const data = await response.json();
+             return data;
+         }
+      </script>
    </body>
-               </html>
-   
+</html>
