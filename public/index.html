@@ -1,212 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <title>Home</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="styles.css">
-      <link rel="icon" type="image/x-icon" href="image/favicon.ico">
-      <style>
-         body {
-            background-color: black; 
-            color: #00ff00; 
-         }
+<head>
+   <title>Home</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles.css">
+   <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+   <style>
+      body {
+         background-color: black; 
+         color: #00ff00; 
+      }
 
-         .matrix-container {
-            position: absolute;
-            top: 0;
-            left: 2;
-            width: 7000%;
-            height: 1000%;
-            pointer-events: none;
-            overflow: hidden;
-         }
+      .matrix-container {
+         position: absolute;
+         top: 0;
+         left: 2;
+         width: 7000%;
+         height: 1000%;
+         pointer-events: none;
+         overflow: hidden;
+      }
 
-         .matrix-text {
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            color: green;
-            position: absolute;
-            animation: fall 35s linear infinite;
-         }
+      .matrix-text {
+         font-family: 'Courier New', monospace;
+         font-size: 16px;
+         color: green;
+         position: absolute;
+         animation: fall 35s linear infinite;
+      }
 
-         @keyframes fall {
-            0% {
-               transform: translateY(-100%);
-            }
-            100% {
-               transform: translateY(100vh);
-            }
+      @keyframes fall {
+         0% {
+            transform: translateY(-100%);
          }
-
-         .neon-green-text {
-            color: #00ff00; 
+         100% {
+            transform: translateY(100vh);
          }
+      }
 
-         
-         .neon-green-box {
-            padding: 10px;
-            margin-bottom: 20px;
+      .neon-green-text {
+         color: #00ff00; 
+      }
+
+
+      .neon-green-box {
+         padding: 10px;
+         margin-bottom: 20px;
+         box-shadow: 0 0 10px 2px #00ff00; 
+         animation: glow 2s infinite alternate; 
+         background-color: black; 
+      }
+
+      @keyframes glow {
+         from {
             box-shadow: 0 0 10px 2px #00ff00; 
-            animation: glow 2s infinite alternate; 
-            background-color: black; 
          }
+         to {
+            box-shadow: 0 0 20px 5px #00ff00; 
+         }
+      }
 
-         @keyframes glow {
-            from {
-               box-shadow: 0 0 10px 2px #00ff00; 
-            }
-            to {
-               box-shadow: 0 0 20px 5px #00ff00; 
-            }
-         }
 
-         
-         .video-container {
-            width: 100%;
-            margin-top: 20px;
-         }
+      .video-container {
+         width: 100%;
+         margin-top: 20px;
+      }
 
-         .video-container video {
-            width: 100%;
-         }
-      </style>
-   </head>
-   <body>
-      <div class="matrix-container">
-         <div class="matrix-text">                                    ———————here your appstate 👇🏻—————</div>
-      </div>
-      <audio id="background-music" src="https://drive.google.com/uc?export=download&id=1cY_Eg5RHQD_8IfvyDvRRtKmMxnX7ePjX" autoplay loop></audio>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <a class="navbar-brand" href="#">Home </a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      .video-container video {
+         width: 100%;
+      }
+
+      .navbar {
+         background-color: black;
+         border: 2px solid #00ff00;
+      }
+
+      .navbar-nav .nav-link {
+         color: #00ff00;
+      }
+
+      .navbar-brand {
+         color: #00ff00;
+      }
+
+      .navbar-toggler {
+         border-color: #000000;
+         background-color: #00ff00;
+      }
+
+      .navbar-toggler-icon {
+         background-color: #00ff00;
+      }
+   </style>
+</head>
+<body>
+   <div class="matrix-container">
+      <div class="matrix-text">                                    ———————here your appstate 👇🏻—————</div>
+   </div>
+   <audio id="background-music" src="https://drive.google.com/uc?export=download&id=1cY_Eg5RHQD_8IfvyDvRRtKmMxnX7ePjX" autoplay loop></audio>
+   <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow: 0 0 8px #00ff62e8;">
+      <a class="navbar-brand" href="#" style="color: #00ff00;">Home </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin-right: 70px;">
-            <ul class="navbar-nav">
-               <li class="nav-item active">
-                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span>
-                  </a>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Features </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="https://autosharev2.onrender.com/">Auto Share</a>
-                     <div class="dropdown-divider"></div>
-                     <a class="dropdown-item" href="https://gettoken-pfq0.onrender.com/">Access Token</a>
-                     <div class="dropdown-divider"></div>
-                     <a class="dropdown-item" href="/step_by_step_guide">Step-by-Step Guide</a>
-                  </div>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="online_user">Active</a>
-               </li>
-            </ul>
-         </div>
-      </nav>
-      <div class="container neon-green-box">
-         <h1 class="col text-center neon-green-text" style="font-size: 20px; padding: 10px;">AUTO-BOT CREATOR</h1>
-         
-         <div class="video-container">
-            <video width="100%" controls>
-               <source src="https://i.imgur.com/QZFE1nM.mp4" type="video/mp4">
-               Your browser does not support the video tag.
-            </video>
-         </div>
-         
-         <form id="json-form" onsubmit="submitForm(event)">
-            <div class="row">
-               <div class="col-md-12">
-                  <textarea id="json-data" class="form-control centered-textarea center-placeholder" placeholder=""></textarea>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin-right: 50px;">
+         <ul class="navbar-nav">
+            <li class="nav-item active">
+               <a class="nav-link" href="/" style="color: #00ff00;">Home <span class="sr-only">(current)</span>
+               </a>
+            </li>
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #00ff00;"> Features </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="https://autosharev2.onrender.com/">Auto Share</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="https://gettoken-pfq0.onrender.com/">Access Token</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/step_by_step_guide">Step-by-Step Guide</a>
                </div>
-            </div>
-         </form>
-         <p class="neon-green-text" style="margin-top: 10px">Greetings! Begin by entering your cookie ⇡. Scroll down to carefully review our Terms and Privacy.</p>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="online_user" style="color: #00ff00;">Active</a>
+            </li>
+         </ul>
       </div>
-      <div class="container neon-green-box">
-         <h1 class="col text-center neon-green-text" style="font-size: 20px; padding: 10px;">Terms and Conditions and Privacy Policy</h1>
-         <p class="neon-green-text">WALANG SAPILITAN.</p>
-         <div class="container neon-green-box" id="listOfCommands">
-            <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please choose your commands by tapping on the respective options.</h1>
-            <button class="btn btn-primary" onclick="selectAllCommands()">Select all commands</button>
-         </div>
-         <div class="container neon-green-box" id="listOfCommandsEvent">
-            <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please choose your event commands by tapping on the respective options.</h1>
-            <button class="btn btn-primary" onclick="selectAllEvents()">Select all events</button>
-         </div>
-         <div class="container neon-green-box" id="prefixOfCommands">
-            <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please provide prefix (optional). Here are some prefix that you can use choose one then put it to box ( / . ! @ # $ % ^ * ). If you choose not entering no need to add it will be considered as no prefix but it`s working</h1>
-            <input type="text" id="inputOfPrefix" class="form-control" placeholder="Prefix">
-         </div>
-         <div class="container neon-green-box" id="adminOfCommands">
-            <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please provide Facebook userID (optional). If you choose not entering it will be considered as default.</h1>
-            <input type="text" id="inputOfAdmin" class="form-control" placeholder="Admin ID">
-         </div>
-         <label class="neon-green-text" style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
-         <input type="checkbox" id="agreeCheckbox" style="margin-right: 10px;"> Checking this box certifies that I have read, understood, and agreed to the Terms and Conditions. </label>
-         <div class="col text-center">
-            <button class="btn btn-primary" onclick="State()" disabled id="submitButton" style="width: 100%">Submit</button>
-         </div>
-      </div>
-      <div class="container neon-green-box">
-         <h1 class="col text-center neon-green-text" style="font-size: 20px; padding: 10px;">FEEDBACK</h1>
-         <form id="command-form" onsubmit="submitCommand(event)">
-            <div class="row">
-               <div class="col-md-12">
-                  <textarea id="command-data" class="form-control centered-textarea center-placeholder" placeholder="Paste your feedback here also you can request to admin for new command paste it here"></textarea>
-               </div>
-            </div>
-            <button type="submit" class="btn btn-success" style="width: 100%;">Submit</button>
-         </form>
-      </div>
-      <div id="submission-message" class="container text-center neon-green-text" style="display: none; margin-top: 10px;">Thanks for submitting!</div>
-      <div id="result" class="container text-center" style="display: none;"></div>
-      <div class="footer">
-         <p>Time: <span id="time"></span>
-         </p>
-         <p>Ping: <span id="ping"></span>
-         </p>
-      </div>
-      <script src="script.js"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-      <script>
-         function submitCommand(event) {
-             event.preventDefault();
-             const commandData = document.getElementById('command-data').value;
-             
-             const botToken = '7140462385:AAEMlQkmWwwINpGCY10W1e-i1Weq-1HBBbM';
-             const chatId = '6656858850';
-             
-             sendMessage(botToken, chatId, commandData)
-                 .then(response => {
-                     console.log('Command suggestion sent successfully:', response);
-                     document.getElementById('command-data').value = ''; 
-                     document.getElementById('submission-message').style.display = 'block'; 
-                 })
-                 .catch(error => console.error('Error sending command suggestion:', error));
-         }
+   </nav>
+   <div class="container neon-green-box">
+      <h1 class="col text-center neon-green-text" style="font-size: 20px; padding: 10px;">AUTO-BOT CREATOR</h1>
 
-         async function sendMessage(botToken, chatId, message) {
-             const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-             const options = {
-                 method: 'POST',
-                 headers: {
-                     'Content-Type': 'application/json',
-                 },
-                 body: JSON.stringify({
-                     chat_id: chatId,
-                     text: message,
-                 }),
-             };
-             const response = await fetch(apiUrl, options);
-             const data = await response.json();
-             return data;
-         }
-      </script>
-   </body>
+      <div class="video-container">
+         <video width="100%" controls>
+            <source src="https://i.imgur.com/QZFE1nM.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+         </video>
+      </div>
+
+      <form id="json-form" onsubmit="submitForm(event)">
+         <div class="row">
+            <div class="col-md-12">
+               <textarea id="json-data" class="form-control centered-textarea center-placeholder" placeholder=""></textarea>
+            </div>
+         </div>
+      </form>
+      <p class="neon-green-text" style="margin-top: 10px">Greetings! Begin by entering your cookie ⇡. Scroll down to carefully review our Terms and Privacy.</p>
+   </div>
+   <div class="container neon-green-box">
+      <h1 class="col text-center neon-green-text" style="font-size: 20px; padding: 10px;">Terms and Conditions and Privacy Policy</h1>
+      <p class="neon-green-text">WALANG SAPILITAN.</p>
+      <div class="container neon-green-box" id="listOfCommands">
+         <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please choose your commands by tapping on the respective options.</h1>
+         <button class="btn btn-primary" onclick="selectAllCommands()">Select all commands</button>
+      </div>
+      <div class="container neon-green-box" id="listOfCommandsEvent">
+         <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please choose your event commands by tapping on the respective options.</h1>
+         <button class="btn btn-primary" onclick="selectAllEvents()">Select all events</button>
+      </div>
+      <div class="container neon-green-box" id="prefixOfCommands">
+         <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please provide prefix (optional). Here are some prefix that you can use choose one then put it to box ( / . ! @ # $ % ^ * ). If you choose not entering no need to add it will be considered as no prefix but it`s working</h1>
+         <input type="text" id="inputOfPrefix" class="form-control" placeholder="Prefix">
+      </div>
+      <div class="container neon-green-box" id="adminOfCommands">
+         <h1 class="neon-green-text" style="font-size: 16px; padding: 10px;">Please provide Facebook userID (optional). If you choose not entering it will be considered as default.</h1>
+         <input type="text" id="inputOfAdmin" class="form-control" placeholder="Admin ID">
+      </div>
+      <label class="neon-green-text" style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
+      <input type="checkbox" id="agreeCheckbox" style="margin-right: 10px;"> Checking this box certifies that I have read, understood, and agreed to the Terms and Conditions. </label>
+      <div class="col text-center">
+         <button class="btn btn-primary" onclick="State()" disabled id="submitButton" style="width: 100%">Submit</button>
+      </div>
+   </div>
+   <div class="container neon-green-box">
+      <h1 class="col text-center neon-green-text" style="font-size: 20px; padding: 10px;">FEEDBACK</h1>
+      <form id="command-form" onsubmit="submitCommand(event)">
+         <div class="row">
+            <div class="col-md-12">
+               <textarea id="command-data" class="form-control centered-textarea center-placeholder" placeholder="Paste your feedback here also you can request to admin for new command paste it here"></textarea>
+            </div>
+         </div>
+         <button type="submit" class="btn btn-success" style="width: 100%;">Submit</button>
+      </form>
+   </div>
+   <div id="submission-message" class="container text-center neon-green-text" style="display: none; margin-top: 10px;">Thanks for submitting!</div>
+   <div id="result" class="container text-center" style="display: none;"></div>
+   <div class="footer">
+      <p>Time: <span id="time"></span>
+      </p>
+      <p>Ping: <span id="ping"></span>
+      </p>
+   </div>
+   <script src="script.js"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+   <script>
+      function submitCommand(event) {
+          event.preventDefault();
+          const commandData = document.getElementById('command-data').value;
+
+          const botToken = '7140462385:AAEMlQkmWwwINpGCY10W1e-i1Weq-1HBBbM';
+          const chatId = '6656858850';
+
+          sendMessage(botToken, chatId, commandData)
+              .then(response => {
+                  console.log('Command suggestion sent successfully:', response);
+                  document.getElementById('command-data').value = ''; 
+                  document.getElementById('submission-message').style.display = 'block'; 
+              })
+              .catch(error => console.error('Error sending command suggestion:', error));
+      }
+
+      async function sendMessage(botToken, chatId, message) {
+          const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+          const options = {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                  chat_id: chatId,
+                  text: message,
+              }),
+          };
+          const response = await fetch(apiUrl, options);
+          const data = await response.json();
+          return data;
+      }
+   </script>
+</body>
 </html>
