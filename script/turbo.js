@@ -1,39 +1,31 @@
+const axios = require('axios');
+
 module.exports.config = {
-		name: "turbo",
-		version: "1.0.0",
-		role: 0,
-		credits: "cliff",
-		hasPrefix: false,
-		description: "This module provides AI-powered responses using GPT-3.",
-		usage: "<question>",
-		cooldowns: 5,
-	  aliases: ["Gpt3"]
+  name: "turbo",
+  version: "9",
+  role: 0,
+  hasPrefix: false,
+  credits: "Eugene Aguilar",
+  description: "AI powered by blackbox",
+  aliases: ["black"],
+  cooldowns: 0,
 };
 
-module.exports.run = async function ({ api, event, args }) {
-		try {
-				const { G4F } = require("g4f");
+module.exports.run = async function ({api, event, args}) {
+  if (!args[0]) {
+    api.sendMessage("Please provide a question.", event.threadID, event.messageID);
+    return;
+  }
 
-				function reply(a) {
-						api.sendMessage(a, event.threadID, event.messageID);
-				}
+  const text = encodeURIComponent(args.join(" "));
+  const apiUrl = `https://ai-models-d2nz.onrender.com/gpt?model=gpt-3.5-turbo-16k&prompt=${text}`;
 
-				const g4f = new G4F();
-				const textInput = args.join(' ');
-				if (!textInput) return reply('Please provide a question.');
-
-				const messages = [
-						{ role: "user", content: textInput }
-				];
-				const options = {
-						provider: g4f.providers.GPT,
-						model: "gpt-3.5-turbo",
-						debug: true,
-						proxy: ""
-				};
-				const response = await g4f.chatCompletion(messages, options);
-				reply(response);
-		} catch (e) {
-				return reply(e.message);
-		}
-}
+  try {
+    const response = await axios.get(apiUrl);
+    const output = response.data.gpt; // Access the "gpt" property in the JSON response
+    api.sendMessage(output, event.threadID, event.messageID);
+  } catch (error) {
+    console.error("Error:", error);
+    api.sendMessage("An error occurred while fetching the response.", event.threadID, event.messageID);
+  }
+};
