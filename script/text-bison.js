@@ -5,8 +5,8 @@ module.exports.config = {
   version: "9",
   role: 0,
   hasPrefix: false,
-  credits: "Eugene Aguilar",
-  description: "AI powered by blackbox",
+  credits: "shiki",
+  description: "AI powered by llm",
   aliases: ["black"],
   cooldowns: 0,
 };
@@ -18,7 +18,7 @@ module.exports.run = async function ({api, event, args}) {
   }
 
   const text = encodeURIComponent(args.join(" "));
-  const apiUrl = `https://text-bison.onrender.com/palm?text=${text}`;
+  const apiUrl = `https://text-bison-nrlc.onrender.com/palm?text=${text}`;
 
   try {
     const response = await axios.get(apiUrl);
