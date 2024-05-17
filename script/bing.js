@@ -18,7 +18,7 @@ module.exports.run = async function ({api, event, args}) {
   }
 
   const query = encodeURIComponent(args.join(" "));
-  const apiUrl = `https://bing-63ul.onrender.com/bing?q=${query}`;
+  const apiUrl = `https://bing-m7z3.onrender.com/bing?q=${query}`;
 
   try {
     const response = await axios.get(apiUrl);
