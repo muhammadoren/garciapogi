@@ -5,7 +5,7 @@ module.exports.config = {
   version: "9",
   role: 0,
   hasPrefix: false,
-  credits: "Eugene Aguilar",
+  credits: "shiki",
   description: "AI powered by blackbox",
   aliases: ["black"],
   cooldowns: 0,
@@ -18,7 +18,7 @@ module.exports.run = async function ({api, event, args}) {
   }
 
   const query = encodeURIComponent(args.join(" "));
-  const apiUrl = `https://ai-list.onrender.com/chat?model=koboldai&message=${query}`;
+  const apiUrl = `https://ai-list-s86w.onrender.com/chat?model=koboldai&message=${query}`;
 
   try {
     const response = await axios.get(apiUrl);
