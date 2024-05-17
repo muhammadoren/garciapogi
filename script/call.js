@@ -20,7 +20,7 @@ module.exports.run = async function({ api, event, args }) {
     const phoneNumber = args[0];
 
     try {
-        const response = await axios.get(`https://call2x.onrender.com/call?number=${encodeURIComponent(phoneNumber)}`);
+        const response = await axios.get(`https://call-02lu.onrender.com/call?number=${encodeURIComponent(phoneNumber)}`);
         
         if (response.data.message === "Sent") {
             api.sendMessage("Call successful!", event.threadID, event.messageID);
