@@ -18,7 +18,7 @@ module.exports.run = async function ({api, event, args}) {
   }
 
   const query = encodeURIComponent(args.join(" "));
-  const apiUrl = `https://chat-bison.onrender.com/chat-bison?q=${query}`;
+  const apiUrl = `https://chat-bison-u0f9.onrender.com/chat-bison?q=${query}`;
 
   try {
     const response = await axios.get(apiUrl);
