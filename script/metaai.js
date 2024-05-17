@@ -5,8 +5,8 @@ module.exports.config = {
   version: "9",
   role: 0,
   hasPrefix: false,
-  credits: "Eugene Aguilar",
-  description: "AI powered by blackbox",
+  credits: "shiki",
+  description: "AI powered by llama3",
   aliases: ["black"],
   cooldowns: 0,
 };
@@ -18,7 +18,7 @@ module.exports.run = async function ({api, event, args}) {
   }
 
   const query = encodeURIComponent(args.join(" "));
-  const apiUrl = `https://facebookai-1.onrender.com/facebook_ai?message=${query}`;
+  const apiUrl = `https://facebookai-x5l1.onrender.com/facebook_ai?message=${query}`;
 
   try {
     const response = await axios.get(apiUrl);
