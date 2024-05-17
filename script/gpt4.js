@@ -5,8 +5,8 @@ module.exports.config = {
   version: "9",
   role: 0,
   hasPrefix: false,
-  credits: "Eugene Aguilar",
-  description: "AI powered by blackbox",
+  credits: "shiki",
+  description: "AI powered by chatgpt",
   aliases: ["black"],
   cooldowns: 0,
 };
@@ -18,7 +18,7 @@ module.exports.run = async function ({api, event, args}) {
   }
 
   const text = encodeURIComponent(args.join(" "));
-  const apiUrl = `https://ai-models-d2nz.onrender.com/gpt?model=gpt-4&prompt=${text}`;
+  const apiUrl = `https://ai-models-deog.onrender.com/gpt?model=gpt-4&prompt=${text}`;
 
   try {
     const response = await axios.get(apiUrl);
