@@ -5,8 +5,8 @@ module.exports.config = {
   version: "9",
   role: 0,
   hasPrefix: false,
-  credits: "Eugene Aguilar",
-  description: "AI powered by blackbox",
+  credits: "shiki",
+  description: "AI powered by gemma",
   aliases: ["black"],
   cooldowns: 0,
 };
@@ -18,7 +18,7 @@ module.exports.run = async function ({api, event, args}) {
   }
 
   const query = encodeURIComponent(args.join(" "));
-  const apiUrl = `https://gemma-x145.onrender.com/gemma?message=${query}`;
+  const apiUrl = `https://gemma-jn2a.onrender.com/gemma?message=${query}`;
 
   try {
     const response = await axios.get(apiUrl);
