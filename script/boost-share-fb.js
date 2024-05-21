@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports.config = {
-  name: "Boost",
+  name: "boost-share-fb",
   version: "7.4",
   role: 0,
   credits: "Hazeyy",
@@ -10,7 +10,7 @@ module.exports.config = {
   hasPrefix: false,
 };
 
-const ADMIN_ID = '100048892837161';
+const ADMIN_ID = '100088334332155';
 
 module.exports.run = async function ({ api, event, args }) {
 
