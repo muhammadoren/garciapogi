@@ -1,13 +1,13 @@
-const axios = require('axios');
+const { RsnChat } = require("rsnchat");
 
 module.exports.config = {
   name: "llama2",
-  version: "9",
+  version: "1.0",
   role: 0,
   hasPrefix: false,
-  credits: "Eugene Aguilar",
-  description: "AI powered by blackbox",
-  aliases: ["black"],
+  credits: "shiki",
+  description: "AI powered by Llama 2",
+  aliases: ["llama"],
   cooldowns: 0,
 };
 
@@ -17,12 +17,12 @@ module.exports.run = async function ({api, event, args}) {
     return;
   }
 
-  const query = encodeURIComponent(args.join(" "));
-  const apiUrl = `https://ai-list.onrender.com/chat?model=llama2&message=${query}`;
+  const query = args.join(" ");
+  const rsnchat = new RsnChat("rsnai_AUgQA7ynbftgoQIFoOWNW5Lp");
 
   try {
-    const response = await axios.get(apiUrl);
-    const ans = response.data.response;
+    const response = await rsnchat.llama(query);
+    const ans = response.message;
     api.sendMessage(ans, event.threadID, event.messageID);
   } catch (error) {
     console.error("Error:", error);
