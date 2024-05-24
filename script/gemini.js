@@ -1,31 +1,31 @@
-const axios = require('axios');
+const { RsnChat } = require("rsnchat");
 
 module.exports.config = {
-  name: 'gemini',
-  version: '1.0.0',
+  name: "gemini",
+  version: "1.0",
   role: 0,
   hasPrefix: false,
-  aliases: ['gemini', 'bard'],
-  description: "An AI command powered by Gemini",
-  usage: "gemini [prompt]",
-  credits: 'Developer',
-  cooldown: 3,
+  credits: "shiki",
+  description: "AI powered by gemini",
+  aliases: ["gemini"],
+  cooldowns: 0,
 };
 
-module.exports.run = async function({ api, event, args }) {
-  const input = args.join(' ');
-  if (!input) {
-    api.sendMessage(`Please provide a question or statement after 'bard'. For example: 'ai What is the capital of France?'`, event.threadID, event.messageID);
+module.exports.run = async function ({api, event, args}) {
+  if (!args[0]) {
+    api.sendMessage("Please provide a question.", event.threadID, event.messageID);
     return;
   }
-  
-  api.sendMessage(`🔍 "${input}"`, event.threadID, event.messageID);
-  
+
+  const query = args.join(" ");
+  const rsnchat = new RsnChat("rsnai_AUgQA7ynbftgoQIFoOWNW5Lp");
+
   try {
-    const { data } = await axios.get(`https://hercai.onrender.com/gemini/hercai?question=${encodeURIComponent(input)}`);
-    const response = data.reply; // Accessing the 'reply' field from the JSON response
-    api.sendMessage(response + '\n\n', event.threadID, event.messageID);
+    const response = await rsnchat.gemini(query);
+    const ans = response.message;
+    api.sendMessage(ans, event.threadID, event.messageID);
   } catch (error) {
-    api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
+    console.error("Error:", error);
+    api.sendMessage("An error occurred while fetching the response.", event.threadID, event.messageID);
   }
 };
