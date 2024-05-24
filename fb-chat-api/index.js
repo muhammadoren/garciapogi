@@ -179,7 +179,7 @@ function buildAPI(globalOptions, html, jar) {
     'getCurrentUserID',
     'getEmojiUrl',
     'getFriendsList',
-		'getMessage',
+    'getMessage',
     'getThreadHistory',
     'getThreadInfo',
     'getThreadList',
@@ -204,6 +204,9 @@ function buildAPI(globalOptions, html, jar) {
     'setTitle',
     'threadColors',
     'unsendMessage',
+    'editMessage',
+    'shareContact',
+    'uploadAttachment',
 
     // HTTP
     'httpGet',
