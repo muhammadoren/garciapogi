@@ -1,13 +1,13 @@
-const axios = require('axios');
+const { RsnChat } = require("rsnchat");
 
 module.exports.config = {
   name: "mixtral",
-  version: "9",
+  version: "1.0",
   role: 0,
   hasPrefix: false,
   credits: "shiki",
   description: "AI powered by mixtral",
-  aliases: ["black"],
+  aliases: ["mixtral"],
   cooldowns: 0,
 };
 
@@ -17,12 +17,12 @@ module.exports.run = async function ({api, event, args}) {
     return;
   }
 
-  const query = encodeURIComponent(args.join(" "));
-  const apiUrl = `https://mixtral-c0aq.onrender.com/mixtral?message=${query}`;
+  const query = args.join(" ");
+  const rsnchat = new RsnChat("rsnai_AUgQA7ynbftgoQIFoOWNW5Lp");
 
   try {
-    const response = await axios.get(apiUrl);
-    const ans = response.data.response;
+    const response = await rsnchat.mixtral(query);
+    const ans = response.message;
     api.sendMessage(ans, event.threadID, event.messageID);
   } catch (error) {
     console.error("Error:", error);
