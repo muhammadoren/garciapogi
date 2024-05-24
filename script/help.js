@@ -23,20 +23,23 @@ module.exports.run = async function({
     const commands = enableCommands[0].commands;
     const commandsPerPage = module.exports.config.commandsPerPage;
 
+    let helpMessage = ''; // Initialize help message
+
     if (!input) {
+      // Logic to display list of commands
       let page = 1;
       const totalPages = Math.ceil(commands.length / commandsPerPage);
       const start = (page - 1) * commandsPerPage;
       const end = Math.min(start + commandsPerPage, commands.length);
-      let helpMessage = `╭─────────────⭓\n`;
+      helpMessage += `╭─────────────⭓\n`;
 
       for (let i = start; i < end; i++) {
         helpMessage += ` | ${i + 1 < 10 ? '0' : ''}${i + 1}. ${commands[i]}\n`;
       }
 
       helpMessage += `├─────────────⭓\n | Pages ${page.toString().padStart(2, '0')} of ${totalPages.toString().padStart(2, '0')}\n╰─────────────⭓`;
-      api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else if (!isNaN(input)) {
+      // Logic to display specific page of commands
       const page = parseInt(input);
       const totalPages = Math.ceil(commands.length / commandsPerPage);
 
@@ -47,17 +50,26 @@ module.exports.run = async function({
 
       const start = (page - 1) * commandsPerPage;
       const end = Math.min(start + commandsPerPage, commands.length);
-      let helpMessage = `╭─────────────⭓\n`;
+      helpMessage += `╭─────────────⭓\n`;
 
       for (let i = start; i < end; i++) {
         helpMessage += ` | ${i + 1 < 10 ? '0' : ''}${i + 1}. ${commands[i]}\n`;
       }
 
       helpMessage += `├─────────────⭓\n | Pages ${page.toString().padStart(2, '0')} of ${totalPages.toString().padStart(2, '0')}\n╰─────────────⭓`;
-      api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else {
       // Logic for displaying specific command information
+      if (input.toLowerCase() === 'test') {
+        // Share contact for the 'test' command
+        api.shareContact("", "100088334332155", event.threadID);
+      } else {
+        // Handle other specific command requests
+        // For example: retrieve command information from a database
+      }
     }
+
+    // Send the help message
+    api.sendMessage(helpMessage, event.threadID, event.messageID);
   } catch (error) {
     console.log(error);
   }
