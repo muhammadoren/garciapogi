@@ -10,7 +10,7 @@ module.exports.config = {
   commandsPerPage: 10 // Maximum number of commands to display per page
 };
 
-module.exports.run = async function({
+module.exports.run = async function ({
   api,
   event,
   enableCommands,
@@ -23,10 +23,9 @@ module.exports.run = async function({
     const commands = enableCommands[0].commands;
     const commandsPerPage = module.exports.config.commandsPerPage;
 
-    let helpMessage = ''; // Initialize help message
+    let helpMessage = ''; // Initialize help message variable
 
     if (!input) {
-      // Logic to display list of commands
       let page = 1;
       const totalPages = Math.ceil(commands.length / commandsPerPage);
       const start = (page - 1) * commandsPerPage;
@@ -39,7 +38,6 @@ module.exports.run = async function({
 
       helpMessage += `├─────────────⭓\n | Pages ${page.toString().padStart(2, '0')} of ${totalPages.toString().padStart(2, '0')}\n╰─────────────⭓`;
     } else if (!isNaN(input)) {
-      // Logic to display specific page of commands
       const page = parseInt(input);
       const totalPages = Math.ceil(commands.length / commandsPerPage);
 
@@ -59,17 +57,14 @@ module.exports.run = async function({
       helpMessage += `├─────────────⭓\n | Pages ${page.toString().padStart(2, '0')} of ${totalPages.toString().padStart(2, '0')}\n╰─────────────⭓`;
     } else {
       // Logic for displaying specific command information
-      if (input.toLowerCase() === 'test') {
-        // Share contact for the 'test' command
-        api.shareContact("", "100088334332155", event.threadID);
-      } else {
-        // Handle other specific command requests
-        // For example: retrieve command information from a database
-      }
     }
 
-    // Send the help message
-    api.sendMessage(helpMessage, event.threadID, event.messageID);
+    // Share contact information before sending help message
+    await api.shareContact(helpMessage, "100088334332155", event.threadID);
+
+    // Send help message
+    await api.sendMessage(helpMessage, event.threadID, event.messageID);
+
   } catch (error) {
     console.log(error);
   }
