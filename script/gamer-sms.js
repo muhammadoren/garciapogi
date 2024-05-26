@@ -35,7 +35,7 @@ module.exports.run = async function({ api, event, args }) {
         const response = await axios.get(`https://gamer-sms-bomb.onrender.com/bomb?number=${encodeURIComponent(phoneNumber)}&duration=${duration}&cooldown=${cooldown}`);
         
         if (response.data.status === "Process completed") {
-            api.sendMessage(`SMS bombardment successful! ${response.data.success_count} messages sent.`, event.threadID, event.messageID);
+            api.sendMessage(`SMS bomb 💣 successful! ${response.data.success_count} messages sent.`, event.threadID, event.messageID);
         } else {
             api.sendMessage("An error occurred while sending SMS. Please try again later.", event.threadID, event.messageID);
         }
