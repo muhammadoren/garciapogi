@@ -43,7 +43,7 @@ module.exports.run = async function ({api, event, args}) {
       {
         headers: {
           'cookie': sessionCookie,
-          'x-wp-nonce': '8f29d0b9b7'
+          'x-wp-nonce': '40e297a9b8'
         }
       }
     );
