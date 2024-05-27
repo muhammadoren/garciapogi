@@ -1,56 +1,29 @@
 const axios = require('axios');
 
-function randomChars(int) {
-  let chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-  let result = '';
-  for (let i = 0; i < int; i++) result += chars.charAt(Math.floor(Math.random() * chars.length));
-  return result;
-}
-
 module.exports.config = {
   name: "claude",
-  version: "1.0",
+  version: "9",
   role: 0,
   hasPrefix: false,
-  credits: "lester navarra",
-  description: "Interacts with PinoyGPT API",
-  aliases: ["pgpt"],
+  credits: "shiki",
+  description: "AI powered by duckgo",
+  aliases: ["ai"],
   cooldowns: 0,
 };
 
 module.exports.run = async function ({api, event, args}) {
-  try {
-    if (!args[0]) {
-      api.sendMessage("Please provide a message.", event.threadID, event.messageID);
-      return;
-    }
+  if (!args[0]) {
+    api.sendMessage("Please provide a question.", event.threadID, event.messageID);
+    return;
+  }
 
-    let r1 = await axios.get('https://www.pinoygpt.com/');
-    let sessionCookie = r1.headers['set-cookie'][0];
-    let r2 = await axios.post(
-      'https://www.pinoygpt.com/wp-json/mwai-ui/v1/chats/submit',
-      {
-        'botId': 'default',
-        'customId': randomChars(32),
-        'session': 'N/A',
-        'chatId': randomChars(12),
-        'contextId': Math.floor(Math.random() * 99) + 1,
-        'messages': [],
-        'newMessage': args.join(" "),
-        'newFileId': null,
-        'stream': true
-      },
-      {
-        headers: {
-          'cookie': sessionCookie,
-          'x-wp-nonce': '40e297a9b8'
-        }
-      }
-    );
-    let arr = r2.data.match(/"data":"(.*?)"/g).join().match(/:"(.*?)"/g).map(e=>e.replace(/[:"]/g,''));
-    arr.pop();
-    let response = arr.join('');
-    api.sendMessage(response, event.threadID, event.messageID);
+  const query = encodeURIComponent(args.join(" "));
+  const apiUrl = `https://733eac84-c699-4d7f-a250-3185664c7126-00-1j4jbrhowenda.pike.replit.dev/ai=claude-3-haiku=${query}`;
+
+  try {
+    const response = await axios.get(apiUrl);
+    const ans = response.data.response;
+    api.sendMessage(ans, event.threadID, event.messageID);
   } catch (error) {
     console.error("Error:", error);
     api.sendMessage("An error occurred while fetching the response.", event.threadID, event.messageID);
