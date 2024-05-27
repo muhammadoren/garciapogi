@@ -18,7 +18,7 @@ module.exports.run = async function ({api, event, args}) {
   }
 
   const query = encodeURIComponent(args.join(" "));
-  const apiUrl = `https://733eac84-c699-4d7f-a250-3185664c7126-00-1j4jbrhowenda.pike.replit.dev/ai=blackbox=${query}`;
+  const apiUrl = `https://g4f-eqak.onrender.com/ai=blackbox=${query}`;
 
   try {
     const response = await axios.get(apiUrl);
