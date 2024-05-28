@@ -7,7 +7,7 @@ module.exports.config = {
   hasPrefix: false,
   credits: "shiki",
   description: "AI powered by duckgo",
-  aliases: ["ai"],
+  aliases: ["claude"],
   cooldowns: 0,
 };
 
