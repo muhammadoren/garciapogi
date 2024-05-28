@@ -7,7 +7,7 @@ module.exports.config = {
   hasPrefix: false,
   credits: "shiki",
   description: "AI powered by llm",
-  aliases: ["black"],
+  aliases: ["text-bison"],
   cooldowns: 0,
 };
 
