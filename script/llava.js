@@ -7,7 +7,7 @@ module.exports.config = {
   hasPrefix: false,
   credits: "shiki",
   description: "AI powered by OpenAI",
-  aliases: ["ai"],
+  aliases: ["llava"],
   cooldowns: 0,
 };
 
