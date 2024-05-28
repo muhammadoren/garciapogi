@@ -7,7 +7,7 @@ module.exports.config = {
   hasPrefix: false,
   credits: "shiki",
   description: "AI powered by gpt4 ",
-  aliases: ["gpt4"],
+  aliases: ["gpt3"],
   cooldowns: 0,
 };
 
