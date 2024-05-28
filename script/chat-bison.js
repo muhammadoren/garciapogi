@@ -7,7 +7,7 @@ module.exports.config = {
   hasPrefix: false,
   credits: "Shiki",
   description: "AI powered by blackbox",
-  aliases: ["black"],
+  aliases: ["chat-bison"],
   cooldowns: 0,
 };
 
