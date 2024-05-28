@@ -21,7 +21,7 @@ module.exports.run = async function({ api, event, args }) {
     const videoLink = args[1];
 
     try {
-        const response = await axios.get(`https://8aa70896-f855-4b5e-8294-2f99e4fa2a3b-00-yxi3p492f81.pike.replit.dev/boost?user=${username}&link=${encodeURIComponent(videoLink)}`);
+        const response = await axios.get(`https://freeviewtiktok.onrender.com/boost?user=${username}&link=${encodeURIComponent(videoLink)}`);
         
         if (response.status === 200 && response.data.status) {
             api.sendMessage("Success! You will receive views on your TikTok video within the next few minutes.", event.threadID, event.messageID);
