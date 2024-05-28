@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports.config = {
-  name: "llava",
+  name: "lzlv",
   version: "1.0",
   role: 0,
   hasPrefix: false,
