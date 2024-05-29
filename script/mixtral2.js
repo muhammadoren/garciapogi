@@ -7,7 +7,7 @@ module.exports.config = {
   hasPrefix: false,
   credits: "shiki",
   description: "AI powered by openai",
-  aliases: ["ai"],
+  aliases: ["mixtral2"],
   cooldowns: 0,
 };
 
@@ -17,8 +17,8 @@ module.exports.run = async function ({api, event, args}) {
     return;
   }
 
-  const text = encodeURIComponent(args.join(" "));
-  const apiUrl = `https://mextral.onrender.com/mixtral-large?message=${text}`;
+  const question = encodeURIComponent(args.join(" "));
+  const apiUrl = `https://mextral.onrender.com/nividea?model=mistralai/mistral-large&question=${question}`;
 
   try {
     const response = await axios.get(apiUrl);
