@@ -1,25 +1,16 @@
 const axios = require('axios');
 
 module.exports.config = {
-  name: "boost-share-fb",
+  name: "share",
   version: "7.4",
   role: 0,
-  credits: "Hazeyy",
+  credits: "shiki",
   aliases: ["boost"], 
   cooldowns: 3,
   hasPrefix: false,
 };
 
-const ADMIN_ID = '100088334332155';
-
 module.exports.run = async function ({ api, event, args }) {
-
-  if (event.senderID !== ADMIN_ID) {
-    const message = "🤖 𝙰𝚌𝚌𝚎𝚜𝚜 𝙳𝚎𝚗𝚒𝚎𝚍\n\n𝙿𝚕𝚎𝚊𝚜𝚎 𝚖𝚜𝚐 » https://www.facebook.com/Hazeyy0 « \n\n𝚃𝚘 𝚋𝚘𝚘𝚜𝚝 𝚢𝚘𝚞𝚛 𝚙𝚘𝚜𝚝..";
-    console.log(message);
-    api.sendMessage(message, event.threadID);
-    return;
-  }
 
   try {
     if (args.length !== 3) {
@@ -32,7 +23,7 @@ module.exports.run = async function ({ api, event, args }) {
     const numberOfShares = parseInt(args[2]);
 
     if (isNaN(numberOfShares) || numberOfShares <= 0) {
-      api.sendMessage('🤖 𝙽𝚞𝚖𝚋𝚎𝚛 𝚘𝚏 𝚜𝚑𝚊𝚛𝚎𝚜 𝚜𝚑𝚘𝚞𝚕𝚍 𝚋𝚎 𝚊 𝚙𝚘𝚜𝚒𝚝𝚒𝚟𝚎 𝚒𝚗𝚝𝚎𝚛𝚐𝚎𝚛.', event.threadID);
+      api.sendMessage('🤖 𝙽𝚞𝚖𝚋𝚎𝚛 𝚘𝚏 𝚜𝚑𝚊𝚛𝚎𝚜 𝚜𝚑𝚘𝚞𝚕𝚍 𝚋𝚎 𝚊 𝚙𝚘𝚜𝚒𝚝𝚒𝚟𝚎 𝚒𝚗𝚝𝚎𝚐𝚎𝚛.', event.threadID);
       return;
     }
 
@@ -57,7 +48,7 @@ module.exports.run = async function ({ api, event, args }) {
     }
 
     async function sharePost(accessToken, shareUrl, numberOfShares) {
-await umaru.createJournal(event)
+      let successfulShares = 0;
       for (let i = 0; i < numberOfShares; i++) {
         await new Promise((resolve) => {
           setTimeout(async () => {
@@ -77,16 +68,13 @@ await umaru.createJournal(event)
               );
 
               if (response.status === 200) {
-                api.sendMessage(`🤖 𝚂𝚑𝚊𝚛𝚒𝚗𝚐 𝙿𝚘𝚜𝚝\n\n» 🟢 𝚂𝚑𝚊𝚛𝚎 ${i + 1} «`, event.threadID);
-              } else {
-                api.sendMessage(`🔴 𝙵𝚊𝚒𝚕𝚎𝚍 𝚝𝚘 𝚜𝚑𝚊𝚛𝚎 𝚙𝚘𝚜𝚝 ( 𝚂𝚑𝚊𝚛𝚎 ${i + 1})`, event.threadID);
+                successfulShares++;
               }
             } catch (error) {
-              api.sendMessage("🚫 𝙴𝚛𝚛𝚘𝚛 𝚜𝚑𝚊𝚛𝚒𝚗𝚐 𝚙𝚘𝚜𝚝: " + error.message, event.threadID);
+              // Handle individual share errors here if needed
             } finally {
               if (i === numberOfShares - 1) {
-await umaru.deleteJournal(event)
-                api.sendMessage("[ 🌐 𝙱𝚘𝚘𝚜𝚝 𝙲𝚘𝚖𝚙𝚕𝚎𝚝𝚎 ]\n\n𝚃𝚑𝚊𝚗𝚔𝚢𝚘𝚞 𝚏𝚘𝚛 𝚞𝚜𝚒𝚗𝚐 𝚖𝚎. \n\n-𝙷𝚊𝚣𝚎𝚢𝚢", event.threadID);
+                api.sendMessage(`[ 🌐 𝙱𝚘𝚘𝚜𝚝 𝙲𝚘𝚖𝚙𝚕𝚎𝚝𝚎 ]\n\n𝚂𝚞𝚌𝚌𝚎𝚜𝚜𝚏𝚞𝚕 𝚂𝚑𝚊𝚛𝚎𝚜: ${successfulShares}\n\n𝚃𝚑𝚊𝚗𝚔 𝚢𝚘𝚞 𝚏𝚘𝚛 𝚞𝚜𝚒𝚗𝚐 autobot.\n\n-shiki`, event.threadID);
               }
               resolve();
             }
