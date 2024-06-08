@@ -1,33 +1,31 @@
 const axios = require('axios');
+
 module.exports.config = {
-  name: 'artic',
-  version: '1.0.0',
+  name: "artic",
+  version: "9",
   role: 0,
   hasPrefix: false,
-  aliases: ['snowflakes', 'artic'],
-  description: "An AI command powered by snowflakes",
-  usage: "Ai [promot]",
-  credits: 'Developer',
-  cooldown: 3,
+  credits: "shiki",
+  description: "AI powered by openai",
+  aliases: ["granite"],
+  cooldowns: 0,
 };
-module.exports.run = async function({
-  api,
-  event,
-  args
-}) {
-  const input = args.join(' ');
-  if (!input) {
-    api.sendMessage(`Please provide a question or statement after 'artic'. For example: 'artic What is the capital of France?'`, event.threadID, event.messageID);
+
+module.exports.run = async function ({api, event, args}) {
+  if (!args[0]) {
+    api.sendMessage("Please provide a question.", event.threadID, event.messageID);
     return;
   }
-  api.sendMessage(`🔍 "${input}"`, event.threadID, event.messageID);
+
+  const question = encodeURIComponent(args.join(" "));
+  const apiUrl = `https://mextral.onrender.com/nividea?model=snowflake/arctic&question=${question}`;
+
   try {
-    const {
-      data
-    } = await axios.get(`https://ai-1stclass-nemory-project.vercel.app/api/arctic?ask=${encodeURIComponent(input)}`);
-    const response = data.response;
-    api.sendMessage(response + '\n\n', event.threadID, event.messageID);
+    const response = await axios.get(apiUrl);
+    const output = response.data.response; // Access the "response" property in the JSON response
+    api.sendMessage(output, event.threadID, event.messageID);
   } catch (error) {
-    api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
+    console.error("Error:", error);
+    api.sendMessage("An error occurred while fetching the response.", event.threadID, event.messageID);
   }
 };
