@@ -20,8 +20,8 @@ module.exports.run = async function({ api, event, args }) {
   }
   api.sendMessage(`🔍 "${input}"`, event.threadID, event.messageID);
   try {
-    const { data } = await axios.get(`https://ai-1stclass-nemory-project.vercel.app/api/neurospike?ask=${encodeURIComponent(input)}`);
-    const response = data.content;
+    const { data } = await axios.get(`https://neurospike.onrender.com/api/neurospike?ask=${encodeURIComponent(input)}`);
+    const response = data.response;
     api.sendMessage(response + '\n\n', event.threadID, event.messageID);
   } catch (error) {
     api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
